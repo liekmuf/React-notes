@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import NotesArchive from './components/Notes/NotesArchive';
+import { useState } from 'react';
+import NotesMainList from './components/Notes/NotesMainList';
+import Summary from './components/Summary/Summary';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [isArchive, setArchive] = useState(false)
+  const hideArchive = () => setArchive(false)
+  const showArchive = () => setArchive(true)
+  return <div className="notes w-100 container">
+    {isArchive ? <NotesArchive hideArchive={hideArchive} /> 
+    : <NotesMainList showArchive={showArchive} />}
+    <Summary />
+  </div>
+
 }
 
 export default App;
