@@ -1,51 +1,10 @@
 import { dateToText, generateId, getDatesFromText } from "../helpers/helpers"
+import { initialState } from "./initialState"
 
 const ADD_NOTE = "ADD_NOTE"
 const DELETE_NOTE = "DELETE_NOTE"
 const ARCHIVE_NOTE = "ARCHIVE_NOTE"
 const EDIT_NOTE = "EDIT_NOTE"
-
-const initialState = {
-    categories: ["Task", "Idea", "Random Thought"],
-    notes: [{
-        name: "FirstNote",
-        category: "Task",
-        content: "Hello my Dudes",
-        id: "Sddvsffvdsvsvddsv",
-        dates: ["26/04/2011", "12/12/1212"],
-        created: "sdvldsvkldvs",
-        isActive: true
-    }, {
-        name: "ArchiveNote",
-        category: "Task",
-        content: "Hello my Dudes",
-        id: "sdvsdvvsdvdsds",
-        dates: ["26/04/2013", "12/12/1212"],
-        created: "sdvldsvkldvs",
-        isActive: false
-    }, {
-        name: "FirstNote",
-        category: "Task",
-        content: "Hello my Dudes",
-        id: "Sddvsdfbsdvdfbdsv",
-        created: "sdvsdvsd",
-        isActive: true
-    }, {
-        name: "Note",
-        category: "Task",
-        content: "Hello my Dudes",
-        id: "Sddvsdfbvdldfbdsv",
-        created: "sdvsdvsdv",
-        isActive: false
-    }, {
-        name: "Date",
-        category: "Task",
-        content: "Hello my Dudes",
-        id: "sdvsdsdvsvv",
-        created: "sdvldsvkldvs",
-        isActive: true
-    }]
-}
 
 export const notesReducer = (state = initialState, action) => {
     switch (action.type) {

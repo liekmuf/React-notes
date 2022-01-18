@@ -21,6 +21,11 @@ export const dateToText = (date) => {
 
 }
 
+export const reduceText = maxLength => text => {
+    const words = text.slice(0, maxLength).split(" ")
+    return words.slice(0, -1).join(" ")
+}
+
 export const getDatesFromText = (text = "") => {
     const regexp = /(0[1-9]|[12]\d|3[01])\/(0[1-9]|[12]\d|3[01])\/([12]\d{3})/g
         //dd/mm/yyyy or mm/dd/yyyy format
